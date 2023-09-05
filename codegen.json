@@ -1,0 +1,13 @@
+{
+  "documents": "src/graphql/**/*",
+  "generates": {
+    "src/graphql/types.ts": {
+      "plugins": ["typescript", "typescript-operations"],
+      "config": {
+        "enumsAsTypes": true,
+        "maybeValue": "T"
+      }
+    }
+  },
+  "schema": "${VITE_GRAPHQL_API_URL}"
+}
