@@ -1,8 +1,5 @@
-import { useQuery } from '@apollo/client'
-
 import Spinner from '~/components/Spinner'
-import POSTS from '~/graphql/queries/posts'
-import { PostsQuery } from '~/graphql/types'
+import usePosts from '~/hooks/usePosts'
 
 import Post from './Post'
 import {
@@ -16,7 +13,7 @@ import {
 } from './styles'
 
 const PostsList = () => {
-  const { data, loading } = useQuery<PostsQuery>(POSTS)
+  const { loading, posts } = usePosts()
 
   return (
     <Container>
@@ -30,8 +27,8 @@ const PostsList = () => {
           <Spinner />
         ) : (
           <Posts>
-            {data?.posts?.data?.map(({ id, title }) => (
-              <Post key={id} id={id ?? ''} title={title ?? ''} />
+            {posts.map(({ id, title }) => (
+              <Post key={id} id={id} title={title} />
             ))}
           </Posts>
         )}
