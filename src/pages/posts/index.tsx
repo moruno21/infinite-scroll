@@ -12,7 +12,7 @@ import {
   Title,
 } from './styles'
 
-const Posts = () => {
+const Layout = () => {
   const { loading, posts } = usePosts()
 
   return (
@@ -37,4 +37,4 @@ const Posts = () => {
   )
 }
 
-export default Posts
+export default Layout
