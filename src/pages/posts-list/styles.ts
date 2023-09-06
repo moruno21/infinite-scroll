@@ -15,6 +15,7 @@ export const Content = styled.div`
     0rem 0.5625rem 2.875rem 0.5rem rgba(55, 40, 102, 0.06);
   display: grid;
   gap: 4rem;
+  justify-items: center;
   max-width: 43.75rem;
   padding: 2rem;
   width: 100%;
@@ -28,7 +29,6 @@ export const Description = styled.p`
 export const Header = styled.div`
   display: grid;
   gap: 2rem;
-  justify-items: center;
 `
 
 export const PageTitle = styled.h1`
