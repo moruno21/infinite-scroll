@@ -4,11 +4,15 @@ import { createRoot } from 'react-dom/client'
 
 import client from '~/graphql/client'
 import PostsList from '~/pages/posts-list'
+import GlobalStyles from '~/styles/global'
 
 const App = () => (
-  <ApolloProvider client={client}>
-    <PostsList />
-  </ApolloProvider>
+  <>
+    <GlobalStyles />
+    <ApolloProvider client={client}>
+      <PostsList />
+    </ApolloProvider>
+  </>
 )
 
 createRoot(document.getElementById('root')!).render(
