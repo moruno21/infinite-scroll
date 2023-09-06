@@ -31,12 +31,7 @@ export const Header = styled.div`
   gap: 2rem;
 `
 
-export const PageTitle = styled.h1`
-  font-size: 3rem;
-  font-weight: 600;
-`
-
-export const Posts = styled.div`
+export const List = styled.div`
   display: grid;
   gap: 4rem 2rem;
   grid-template-columns: 1fr 1fr;
@@ -44,6 +39,11 @@ export const Posts = styled.div`
   justify-items: center;
   padding: 1rem;
   overflow-y: scroll;
+`
+
+export const PageTitle = styled.h1`
+  font-size: 3rem;
+  font-weight: 600;
 `
 
 export const Title = styled.h1`

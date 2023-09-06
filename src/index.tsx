@@ -3,14 +3,14 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 
 import client from '~/graphql/client'
-import PostsList from '~/pages/posts-list'
+import Posts from '~/pages/posts'
 import GlobalStyles from '~/styles/global'
 
 const App = () => (
   <>
     <GlobalStyles />
     <ApolloProvider client={client}>
-      <PostsList />
+      <Posts />
     </ApolloProvider>
   </>
 )

@@ -7,12 +7,12 @@ import {
   Content,
   Description,
   Header,
+  List,
   PageTitle,
-  Posts,
   Title,
 } from './styles'
 
-const PostsList = () => {
+const Posts = () => {
   const { loading, posts } = usePosts()
 
   return (
@@ -26,15 +26,15 @@ const PostsList = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <Posts>
+          <List>
             {posts.map(({ id, title }) => (
               <Post key={id} id={id} title={title} />
             ))}
-          </Posts>
+          </List>
         )}
       </Content>
     </Container>
   )
 }
 
-export default PostsList
+export default Posts
