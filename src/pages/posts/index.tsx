@@ -1,6 +1,6 @@
 import Spinner from '~/components/Spinner'
-import usePosts from '~/hooks/usePosts'
 
+import useLayout from './hooks'
 import Post from './Post'
 import {
   Container,
@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 const Layout = () => {
-  const { loading, posts } = usePosts()
+  const { loading, posts, thresholdElementRef } = useLayout()
 
   return (
     <Container>
@@ -27,8 +27,15 @@ const Layout = () => {
           <Spinner />
         ) : (
           <List>
-            {posts.map(({ id, title }) => (
-              <Post key={id} id={id} title={title} />
+            {posts.map(({ id, title }, index) => (
+              <Post
+                id={id}
+                key={id}
+                ref={
+                  index === posts.length - 1 ? thresholdElementRef : undefined
+                }
+                title={title}
+              />
             ))}
           </List>
         )}

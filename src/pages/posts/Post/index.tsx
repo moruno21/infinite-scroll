@@ -1,10 +1,14 @@
+import { forwardRef, memo } from 'react'
+
 import { Container, Id, Title } from './styles'
 import { PostProps } from './types'
 
-const Post = ({ id, title }: PostProps) => (
-  <Container>
-    <Id>{id}</Id>
-    <Title>{title}</Title>
-  </Container>
+const Post = forwardRef<HTMLDivElement, PostProps>(
+  ({ id, title, ...props }, ref) => (
+    <Container ref={ref} {...props}>
+      <Id>{id}</Id>
+      <Title>{title}</Title>
+    </Container>
+  ),
 )
-export default Post
+export default memo(Post)

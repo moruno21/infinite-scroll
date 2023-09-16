@@ -4,8 +4,8 @@ import POST_FRAGMENT from '~/graphql/fragments/post'
 
 const POSTS = gql`
   ${POST_FRAGMENT}
-  query Posts {
-    posts {
+  query Posts($options: PageQueryOptions) {
+    posts(options: $options) {
       data {
         ...Post
       }

@@ -515,7 +515,9 @@ export type UsersPage = {
 
 export type PostFragment = { __typename?: 'Post', id?: string, title?: string };
 
-export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
+export type PostsQueryVariables = Exact<{
+  options?: InputMaybe<PageQueryOptions>;
+}>;
 
 
 export type PostsQuery = { __typename?: 'Query', posts?: { __typename?: 'PostsPage', data?: Array<{ __typename?: 'Post', id?: string, title?: string }> } };
